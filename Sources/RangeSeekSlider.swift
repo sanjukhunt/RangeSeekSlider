@@ -459,7 +459,7 @@ import UIKit
     }
 
     private func updateLineHeight() {
-        let barSidePadding: CGFloat = 16.0
+        let barSidePadding: CGFloat = 10.0
         let yMiddle: CGFloat = frame.height / 2.0
         let lineLeftSide: CGPoint = CGPoint(x: barSidePadding, y: yMiddle)
         let lineRightSide: CGPoint = CGPoint(x: frame.width - barSidePadding,
@@ -648,9 +648,11 @@ import UIKit
         } else if diff > maxDistance {
             switch handleTracking {
             case .left:
-                selectedMinValue = selectedMaxValue - maxDistance
-            case .right:
+                //selectedMinValue = selectedMaxValue - maxDistance
                 selectedMaxValue = selectedMinValue + maxDistance
+            case .right:
+                selectedMinValue = selectedMaxValue - maxDistance
+                //selectedMaxValue = selectedMinValue + maxDistance
             case .none:
                 break
             }
